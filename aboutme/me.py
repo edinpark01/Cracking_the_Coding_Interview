@@ -7,5 +7,3 @@ I love software engineering/development <3
 
 Thank you for visiting my GitHub page, may God bless you!
 """
-
-print 'Hello World!!!!!!'
