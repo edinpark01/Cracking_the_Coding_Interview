@@ -1,3 +1,4 @@
+"""
 1.1 Is Unique:
 Implement an algorithm to determine if a string has all unique characters. What if you cannot
 use additional data structures?
@@ -42,3 +43,5 @@ Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 usin
 
 EXAMPLE:
 WATERBOTTLE is a rotation of ERBOTTLEWAT
+
+"""
