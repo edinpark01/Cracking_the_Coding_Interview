@@ -23,6 +23,5 @@ def joinWords(words):
 .
 nth iteration: nx + x = x(n + 1)
 
-
 O(x + 2x + 3x + 4x + 5x + ... + nx) = xn(n + 1) / 2 = O(n^2) 
 """
