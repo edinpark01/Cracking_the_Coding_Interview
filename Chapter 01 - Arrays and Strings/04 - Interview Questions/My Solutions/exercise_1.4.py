@@ -61,8 +61,6 @@ string = 'tact coa'
 
 print(check(string))
 
-
-
 """
 EXPLANATION
 
