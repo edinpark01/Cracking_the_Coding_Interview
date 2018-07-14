@@ -10,47 +10,85 @@ original string, your method should return the original string. You can assume t
 and lowercase letters (a - z)
 """
 
+"""
+NOTES:
+1 - If the 'compressed' string is same length as original, RETURN original
+2 - ASSUMPTION: input consists of only UPPERCASE and LOWERCASE letters (a - z)
+3 - Compressed string consists of a count of consectutive character
+    3.1 - If character repeats at diferent locations, its count would not affect previous counts 
+"""
+
+
 def string_compress(s):
-    #STEP 0: Initialize compressed string & list to assist w/ character counts
-    c_s = ''
-    lst = []
+    # STEP 0: Initialize compressed string variable
+    compresed_string = ''
     compressed = False
+    compressing = False
+    counter = 0
 
-    #STEP 1: Traverse string
-    for char in s:
-        # STEP 2: If character not in list
-        if char not in lst:
-            # STEP 2.1: Append character to list AND append first count, which is 1
-            lst.append(char)
-            lst.append(1)
+    # STEP 1: Traverse string
+    i = 0
+    while i < len(s):
+        # STEP 2: retrieve current character and the one next to it
+        current_chr = s[i]
+        next_chr = s[i + 1] if i + 1 < len(s) else 'reached end'
 
-        # STEP 3: If character in list
+        # STEP 3: if current IS EQUAL to next character
+        if current_chr == next_chr:
+            # STEP 3.1: compressing string - set compressing bool to True
+            compressing = True
+
+            # STEP 3.2: increment counter by 1 AND continue loop - INCREMENT iterator by 1
+            counter += 1
+            i += 1
+            continue
+
+        # STEP 4: Otherwise - END of string of next character is different than current character
         else:
-            # STEP 3.1: Get its index location and increment its index + 1 by 1
-            idx = lst.index(char)
-            lst[idx + 1] += 1
+            # STEP 4.1: If current character was being compressed
+            if compressing:
+                # STEP 4.1.1: Accumulate compressed string w/ current character and its count + 1
+                compresed_string += current_chr + str(counter + 1)
 
-            # STEP 3.2: Set compressed to True
-            compressed = True
+                # STEP 4.1.2: Reset tracking variables
+                compressing = False
+                counter = 0
 
-    # STEP 5: Once done compressing string check boolean to make sure that at least one character had multiples
-    if not compressed:
-        # STEP 5.1: if not character multiples, return original string
-        return s
+                # STEP 4.1.3 string is being compressed, SET compressed bool to true
+                compressed = True
+
+            # STEP 4.2: Otherwise, current character count is one
+            else:
+                # STEP 4.2.1: Accumulate compressed string w/ current character and 1
+                compresed_string += current_chr + '1'
+
+        # STEP 5: add 1 to iterator
+        i += 1
+
+
+
+    # STEP 5: if string go compressed, return its compressed version
+    if compressed:
+        return compresed_string
     else:
-        # STEP 5.2: Otherwise, iterate over list to return compressed string
-        i = 0
-        while i < len(lst):
-            character = str(lst[i])
-            count = str(lst[i + 1])
-            c_s += character + count
+        # STEP 6: Otherwise, return original string
+        return s
 
-            i += 2
-        return c_s
 
-string = 'aabcccccaaa'
-string_2 = 'abc'
+# TEST cases
+test_cases = ['aabcccccaaa', 'abc', 'aabbccaabbccceegGGeFFFFFyyyAAAaa']
+correct_out = ['a2b1c5a3', 'abc', 'a2b2c2a2b2c3e2g1G2e1F5y3A3a2']
 
-compressed_string = string_compress(string_2)
+# Testing
+i = 0
+for case in test_cases:
+    output = string_compress(case)
+    expected_output = correct_out[i]
+    result = 'True' if output == expected_output else 'False""'
 
-print(compressed_string)
+    print('input:\t\t' + case)
+    print('output:\t\t' + output)
+    print('expected:\t' + expected_output)
+    print('CORRECT =>\t' + result + '\n')
+
+    i += 1
