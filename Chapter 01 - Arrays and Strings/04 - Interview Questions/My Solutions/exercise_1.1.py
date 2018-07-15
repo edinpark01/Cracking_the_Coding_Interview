@@ -20,5 +20,7 @@ def isUnique(str):
 
     return 'Unique'
 
+
 print(isUnique(unique_str))
+
 print(isUnique(non_unique_str))
