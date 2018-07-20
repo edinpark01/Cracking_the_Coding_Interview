@@ -13,7 +13,6 @@ class Node:
 
         n.next = end
 
-    """ A) Write code to remove duplicates from an unsorted linked list """
     def remove_dup_with_buffer(self):
         current = self
         previous = None
@@ -28,7 +27,6 @@ class Node:
 
             current = current.next
 
-    """ B) How would you solve this problem if a temporary buffer is not allowed? """
     def remove_dup_without_buffer(self):
         current = self
 
