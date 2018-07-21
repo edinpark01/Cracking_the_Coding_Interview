@@ -55,7 +55,7 @@ class Node:
         n = self
         lst = []
 
-        while n.next is not None:
+        while n is not None:
             lst.append(n.data)
             n = n.next
 
