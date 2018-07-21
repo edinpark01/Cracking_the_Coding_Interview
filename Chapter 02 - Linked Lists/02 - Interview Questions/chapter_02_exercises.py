@@ -16,13 +16,13 @@ the exact middle) of a singly linked list, give only access to that node.
 
 EXAMPLE:
     INPUT: The node c from the linked list [ a -> b -> c -> d -> e -> f ]
-    RESULT: Nothing is returned, but hte new linked list looks like [ a -> b -> d -> e -> f ]
+    RESULT: Nothing is returned, but the new linked list looks like [ a -> b -> d -> e -> f ]
 
 -------------------------------------------------------------------------------------------------------------------------
 
 2.4 Partition:
 Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes
-grater than or equal to x. If x is contained within the list, the values of x only need to be after the elements
+greater than or equal to x. If x is contained within the list, the values of x only need to be after the elements
 less than x (see below). The partition element x can appear anywhere in the "right partition"; it does not need
 to appear between the left and right partitions.
 
