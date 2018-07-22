@@ -4,8 +4,7 @@ class Node:
         self.data = data
         self.next = None  # the pointer initially points to nothing
 
-    def append_to_tail(self, data):
-        end = Node(data)
+    def append_to_tail(self, end):
         n = self
 
         while n.next is not None:
@@ -33,7 +32,7 @@ class Node:
         while current is not None:
             runner = current
 
-            while runner.next is not None:  # remove all futere nodes w/ same data
+            while runner.next is not None:  # remove all future nodes w/ same data
                 if runner.next.data == current.data:
                     runner.next = runner.next.next
                 else:
@@ -45,7 +44,7 @@ class Node:
         counter = 0
         n = self
 
-        while n.next is not None:
+        while n is not None:
             counter += 1
             n = n.next
 
