@@ -39,7 +39,7 @@ otherwise:
 
 from Node import Node
 
-""" TEST CASES """
+# ******************* TEST CASES *******************
 cases = [
     ['A', 'B', 'C', 'B', 'A'],                  # EVEN palindrome
     ['A', 'B', 'C', 'B', 'C'],                  # EVEN non-palindrome
@@ -61,6 +61,7 @@ for case in cases:
     head_nodes.append(head)
 
 
+# ******************* SOLUTION *******************
 def palindrome(node):
     h = node
     is_palindrome = True
@@ -95,22 +96,22 @@ def palindrome(node):
 for head in head_nodes:
     palindrome(head)
 
-"""
-******************* OUTPUT *******************
 
-['A', 'B', 'C', 'B', 'A']
-Linked List is a Palindrome
+# ******************* OUTPUT *******************
+#
+# ['A', 'B', 'C', 'B', 'A']
+# Linked List is a Palindrome
+#
+# ['A', 'B', 'C', 'B', 'C']
+# Linked List is not a Palindrome
+#
+# ['A', 'B', 'C', 'D', 'D', 'C', 'B', 'A']
+# Linked List is a Palindrome
+#
+# ['A', 'B', 'C', 'D', 'D', 'C', 'B', 'B']
+# Linked List is not a Palindrome
 
-['A', 'B', 'C', 'B', 'C']
-Linked List is not a Palindrome
 
-['A', 'B', 'C', 'D', 'D', 'C', 'B', 'A']
-Linked List is a Palindrome
-
-['A', 'B', 'C', 'D', 'D', 'C', 'B', 'B']
-Linked List is not a Palindrome
-
-"""
 
 
 
