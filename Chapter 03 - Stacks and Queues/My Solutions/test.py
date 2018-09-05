@@ -1,11 +1,32 @@
-from exercise_3_4 import MyQueue
+from exercise_3_6 import AnimalShelter
 
-queue = MyQueue()
+stack = AnimalShelter()
 
-for i in range(10):
-    queue.add(i)
+stack.enqueue('CAT')
+stack.enqueue('CAT')
+stack.enqueue('CAT')
+stack.enqueue('DOG')
+stack.enqueue('CAT')
+stack.enqueue('CAT')
+stack.enqueue('DOG')
+stack.enqueue('CAT')
+stack.enqueue('CAT')
+stack.enqueue('DOG')
+stack.enqueue('DOG')
+stack.enqueue('DOG')
+stack.enqueue('DOG')
+stack.enqueue('DOG')
+stack.enqueue('CAT')
 
-print queue.peek()
+print stack.dequeueCAT()
+print stack.dequeueCAT()
+print stack.dequeueCAT()
+print stack.dequeueDOG()
+print stack.dequeueDOG()
+print stack.dequeueDOG()
+print stack.dequeueDOG()
 
-for j in range(10):
-    print queue.remove()
+print '\nRemaining...\n'
+
+while not stack.isEmpty():
+    print stack.dequeueANY()
